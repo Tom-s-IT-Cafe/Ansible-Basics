@@ -1,0 +1,12 @@
+---
+- name: My play 1
+  hosts: 192.168.1.91
+  tasks:
+    - name: Check with ping
+      ansible.builtin.ping:
+
+- name: My play 2
+  hosts: rpm
+  tasks:
+    - name: Another ping check
+      ansible.builtin.ping:
