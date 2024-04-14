@@ -1,0 +1,41 @@
+---
+#
+# Install Apache2 and PHP
+#
+- name: Install Apache2 and PHP
+  hosts: deb
+  become: true
+
+  vars:
+    cache: 3600
+    pkg_name: apache2
+    service_name: apache2
+
+  tasks:
+    - name: Update APT cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: "{{ cache }}"
+
+    - name: Install Apache2 package
+      ansible.builtin.apt:
+        name: "{{ pkg_name }}"
+        state: present
+
+    - name: Enable Apache2 service
+      ansible.builtin.service:
+        name: "{{ service_name }}"
+        enabled: true
+        state: started
+
+    - name: Install PHP package
+      ansible.builtin.apt:
+        name: php
+        state: present
+      notify: Restart_apache
+
+  handlers:
+    - name: Restart_apache
+      ansible.builtin.service:
+        name: "{{ service_name }}"
+        state: reloaded
