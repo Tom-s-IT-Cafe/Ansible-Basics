@@ -1,0 +1,14 @@
+---
+- name: Loops in Ansible
+  hosts: all
+  tasks:
+    - name: Add users to the system
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+        groups: "sudo"
+        create_home: false
+      loop:
+        - user1
+        - user2
+        - user3
