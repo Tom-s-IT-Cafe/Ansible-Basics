@@ -1,6 +1,6 @@
 # Playbooks
 
-Main article: [soon]
+Lesson: http://tomsitcafe.com/2024/04/16/ansible-basics-05-playbooks/
 
 Video: https://www.youtube.com/watch?v=0R5jSdrGzhE
 
