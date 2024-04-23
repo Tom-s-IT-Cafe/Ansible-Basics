@@ -1,0 +1,20 @@
+- name: Learning about Ansible templates
+  hosts: all
+
+  vars:
+
+    # For 2-template-loops.j2
+    u_list:
+      - Joe
+      - John
+      - Jake
+    u_data:
+      - { name: Tom, system: Linux }
+      - { name: Tim, system: Windows }
+
+  tasks:
+    # Generate a file using loops
+    - name: Loops in a template
+      ansible.builtin.template:
+        src: templates/2-template-loops.j2
+        dest: /home/tmolnar/ansible/lesson07/2-example-loops.txt
