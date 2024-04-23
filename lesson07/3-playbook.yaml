@@ -1,0 +1,13 @@
+---
+- name: Learning about Ansible templates
+  hosts: all
+
+  vars:
+    section: true
+
+  tasks:
+    # Generate a file based on a condition
+    - name: Conditionals in a template
+      ansible.builtin.template:
+        src: templates/3-template-condition.j2
+        dest: /home/tmolnar/ansible/lesson07/3-example-condition.txt
