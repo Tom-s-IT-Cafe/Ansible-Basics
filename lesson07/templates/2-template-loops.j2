@@ -1,0 +1,15 @@
+Hello,
+
+Here you can use loops in Jinja2 templates!
+
+The users from the vars are:
+
+{% for user in u_list %}
+- {{ user }}
+{% endfor %}
+
+Some hashes:
+
+{% for data in u_data %}
+- {{ data.name }} uses {{ data.system }}
+{% endfor %}
