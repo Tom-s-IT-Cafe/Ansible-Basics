@@ -1,0 +1,10 @@
+---
+- name: Learning about Ansible templates
+  hosts: all
+
+  tasks:
+    # This task will generate the first simple file
+    - name: Using a template
+      ansible.builtin.template:
+        src: templates/1-template-simple.j2
+        dest: /home/tmolnar/ansible/lesson07/1-example-simple.txt
