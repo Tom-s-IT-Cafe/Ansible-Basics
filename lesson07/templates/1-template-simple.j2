@@ -1,0 +1,4 @@
+Hello, we are running on {{ inventory_hostname }},
+
+The OS family is {{ ansible_facts["os_family"] }}.
+The Linux distribution is {{ ansible_facts["distribution"] }} {{ ansible_facts["distribution_major_version"] }}.
