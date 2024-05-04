@@ -1,0 +1,6 @@
+- name: First playbook to load a role
+  hosts: all
+
+  roles:
+    - common
+    - common2

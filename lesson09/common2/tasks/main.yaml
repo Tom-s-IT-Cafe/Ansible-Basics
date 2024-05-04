@@ -1,0 +1,3 @@
+- name: This is the main.yaml in the common
+  ansible.builtin.debug:
+    msg: Hello, this is the second task
